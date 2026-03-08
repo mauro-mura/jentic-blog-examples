@@ -23,7 +23,7 @@ mvn clean install
 
 ```bash
 cd post-02-pingpong
-mvn exec:java
+mvn compile exec:java
 ```
 
 ## Expected output
