@@ -1,7 +1,7 @@
 # post-02-pingpong
 
 PingPong example for article **#02 — Your first Jentic agent in 5 minutes**  
-📖 [Read the article](https://bitautonomi.substack.com)
+📖 [Read the article](https://bitautonomi.substack.com/p/il-tuo-primo-agente-jentic-in-5-minuti)
 
 ## Requirements
 
