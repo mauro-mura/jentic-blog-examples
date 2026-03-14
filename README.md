@@ -43,7 +43,7 @@ Each folder has its own `README.md` with specific instructions and a link to the
 
 | # | Title | Folder | Level |
 |---|-------|--------|-------|
-| 02 | [Your first Jentic agent in 5 minutes](https://bitautonomi.substack.com) | `post-02-pingpong` | ⭐ Entry |
+| 02 | [Your first Jentic agent in 5 minutes](https://bitautonomi.substack.com/p/il-tuo-primo-agente-jentic-in-5-minuti) | `post-02-pingpong` | ⭐ Entry |
 | 03 | Anatomy of a Jentic agent | `post-03-anatomy` | ⭐ Entry |
 | 04 | Behaviors: the beating heart of agents | `post-04-behaviors` | ⭐ Entry |
 | 05 | Composite Behaviors: Sequential, Parallel and FSM | `post-05-composite-behaviors` | ⭐⭐ Mid |
