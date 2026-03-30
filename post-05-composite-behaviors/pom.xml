@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.jentic.blog</groupId>
+    <artifactId>post-05-composite-behaviors</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Post #05 — Composite Behaviors: Sequential, Parallel and FSM</name>
+    <description>
+        Code examples for post #05 of {bit Autonomi}.
+        Demonstrates SequentialBehavior, ParallelBehavior and FSMBehavior
+        through four progressive scenarios: report pipeline,
+        order validation, FSM lifecycle and full orchestration.
+    </description>
+
+    <properties>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>dev.jentic</groupId>
+                <artifactId>jentic-bom</artifactId>
+                <version>0.14.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>dev.jentic</groupId>
+            <artifactId>jentic-runtime</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
