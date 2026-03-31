@@ -1,0 +1,12 @@
+jentic:
+  runtime:
+    name: "post-06-demo"
+    environment: "development"
+  agents:
+    autoDiscovery: true
+    scanPackages:
+      - "dev.jentic.blog.post06"
+  messaging:
+    provider: "inmemory"
+  directory:
+    provider: "local"
