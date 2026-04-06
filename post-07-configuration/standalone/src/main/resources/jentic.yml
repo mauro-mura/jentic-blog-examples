@@ -1,0 +1,18 @@
+jentic:
+  runtime:
+    name: heartbeat-system
+    environment: development
+
+  agents:
+    autoDiscovery: true
+    basePackage: "dev.jentic.blog.post07"
+
+  messaging:
+    provider: inmemory
+
+  directory:
+    provider: local
+
+  scheduler:
+    provider: simple
+    threadPoolSize: 10

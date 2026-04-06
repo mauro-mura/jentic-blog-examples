@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>dev.jentic.blog</groupId>
+        <artifactId>post-07-configuration</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>post-07-configuration-standalone</artifactId>
+    <name>post-07-configuration-standalone</name>
+    <description>
+        Standalone example: HeartbeatAgent running from a plain main() with jentic.yml.
+        Run: mvn exec:java -Dexec.mainClass="dev.jentic.blog.post07.StandaloneMain"
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>dev.jentic</groupId>
+            <artifactId>jentic-runtime</artifactId>
+        </dependency>
+        <!-- SLF4J binding for console output -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <mainClass>dev.jentic.blog.post07.StandaloneMain</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

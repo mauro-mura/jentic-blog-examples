@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.jentic.blog</groupId>
+    <artifactId>post-07-configuration</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>post-07-configuration</name>
+    <description>
+        Blog examples for post #07 — Configuring Jentic: YAML, Spring Boot, and virtual threads.
+        Two modules show the same HeartbeatAgent running under different configurations:
+        - standalone: plain main() with jentic.yml
+        - spring-boot: Spring Boot Starter with application.yml and Actuator health
+    </description>
+
+    <modules>
+        <module>standalone</module>
+        <module>spring-boot</module>
+    </modules>
+
+    <properties>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jentic.version>0.14.1</jentic.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>dev.jentic</groupId>
+                <artifactId>jentic-bom</artifactId>
+                <version>${jentic.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

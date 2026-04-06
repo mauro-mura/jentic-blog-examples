@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: heartbeat-system
+
+jentic:
+  runtime:
+    name: heartbeat-system
+    environment: production
+  agents:
+    base-package: dev.jentic.blog.post07
+  scheduler:
+    thread-pool-size: 20
+
+# Expose the health endpoint with full details
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        Spring Boot parent manages Spring dependency versions.
+        The Jentic BOM is imported separately in dependencyManagement below.
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.1</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>dev.jentic.blog</groupId>
+    <artifactId>post-07-configuration-spring-boot</artifactId>
+    <version>1.0.0</version>
+    <n>post-07-configuration-spring-boot</n>
+    <description>
+        Spring Boot example: HeartbeatAgent running inside a Spring Boot application.
+        Jentic is wired automatically by jentic-spring-boot-starter.
+        Actuator exposes a /actuator/health endpoint with Jentic agent status.
+        Run: mvn spring-boot:run
+    </description>
+
+    <properties>
+        <java.version>21</java.version>
+        <jentic.version>0.14.1</jentic.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>dev.jentic</groupId>
+                <artifactId>jentic-bom</artifactId>
+                <version>${jentic.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Jentic Spring Boot Starter: auto-wires JenticRuntime into the Spring context -->
+        <dependency>
+            <groupId>dev.jentic</groupId>
+            <artifactId>jentic-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Actuator: exposes /actuator/health with Jentic agent status -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- Web layer — needed to keep the application alive and serve /actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
