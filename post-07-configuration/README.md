@@ -32,9 +32,13 @@ The agent code is identical in both modules. Only the configuration layer change
 ### Standalone
 
 ```bash
+git clone --branch v0.14.1 https://github.com/mauro-mura/jentic.git
+cd jentic
+mvn clean install -DskipTests
+
+# Clone the blog examples repo
 git clone https://github.com/mauro-mura/jentic-blog-examples.git
-cd jentic-blog-examples
-git checkout v0.14.1
+cd jentic-blog-examples/post-07-configuration
 
 mvn install -pl standalone
 
