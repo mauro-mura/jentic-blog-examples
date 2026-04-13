@@ -16,8 +16,15 @@ Companion code for [{bit Autonomi} #06 — Architettura Jentic: interface-first 
 ## Run
 
 ```bash
-git clone --branch v0.14.1 https://github.com/mauro-mura/jentic-blog-examples.git
-cd post-06-architecture-overview
+# Clone and install the framework (once)
+git clone --branch v0.14.1 https://github.com/mauro-mura/jentic.git
+cd jentic
+mvn clean install -DskipTests
+
+# Clone the blog examples repo
+git clone https://github.com/mauro-mura/jentic-blog-examples.git
+cd jentic-blog-examples/post-06-architecture-overview
+
 mvn compile exec:java -Dexec.mainClass="dev.jentic.blog.post06.ArchitectureDemo"
 ```
 
