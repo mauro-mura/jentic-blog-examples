@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.jentic.blog</groupId>
+    <artifactId>post-08-llm-integration</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Jentic Blog — Post 08: LLM Integration</name>
+    <description>
+        Example code for {bit Autonomi} post #08 — "Jentic incontra l'AI".
+        Demonstrates how to build an LLM-powered agent using LLMAgent,
+        LLMProviderFactory, and DefaultLLMMemoryManager.
+    </description>
+
+    <properties>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>dev.jentic</groupId>
+                <artifactId>jentic-bom</artifactId>
+                <version>0.17.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Core runtime: BaseAgent, LLMAgent, JenticRuntime, behaviors -->
+        <dependency>
+            <groupId>dev.jentic</groupId>
+            <artifactId>jentic-runtime</artifactId>
+        </dependency>
+
+        <!-- LLM provider implementations: OpenAI, Anthropic, Ollama -->
+        <dependency>
+            <groupId>dev.jentic</groupId>
+            <artifactId>jentic-adapters</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>dev.jentic.blog.post08.TicketClassifierRunner</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
