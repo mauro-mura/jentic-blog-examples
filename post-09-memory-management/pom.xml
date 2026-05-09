@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.jentic.blog</groupId>
+    <artifactId>post-09-memory-management</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>post-09 · Memory Management in LLM agents</name>
+    <description>
+        Blog example for {bit Autonomi} post #09 — MemoryStore and context window strategies.
+        Requires Jentic v0.17.0 installed locally (mvn install -DskipTests from the jentic repo).
+    </description>
+
+    <properties>
+        <java.version>21</java.version>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jentic.version>0.17.0</jentic.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>dev.jentic</groupId>
+                <artifactId>jentic-bom</artifactId>
+                <version>${jentic.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Core runtime: BaseAgent, LLMAgent, InMemoryStore, DefaultLLMMemoryManager -->
+        <dependency>
+            <groupId>dev.jentic</groupId>
+            <artifactId>jentic-runtime</artifactId>
+        </dependency>
+
+        <!-- LLM adapters: LLMProviderFactory, AnthropicProvider -->
+        <dependency>
+            <groupId>dev.jentic</groupId>
+            <artifactId>jentic-adapters</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>${java.version}</release>
+                    <enablePreview>false</enablePreview>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <mainClass>dev.jentic.blog.post09.SupportAgentApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
